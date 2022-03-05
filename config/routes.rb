@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  "contestants" => "contestants#index"
-  "current-round" => "contestants#current_round"
-  "completed-rounds" => "contestants#completed_rounds"
+  get "/contestants" => "contestants#index"
+  get "/current-round" => "contestants#current_round"
+  get "/completed-rounds" => "contestants#completed_rounds"
+  get "/reset" => "contestants#reset"
 end
