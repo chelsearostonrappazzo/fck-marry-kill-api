@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# require 'csv'
+require 'csv'
 
 # CSV.foreach(Rails.root.join('lib/seed_csv/contestants.csv'), headers: true) do |row|
 #   Contestant.create( {
@@ -15,8 +15,10 @@
 #   } ) 
 # end
 
-File.readlines(Rails.root.join('lib/seed_csv/mostlikelyto.txt')).each do |line|
-  Question.create!( {
-    content: line.strip
-  })
-end
+# File.readlines(Rails.root.join('lib/seed_csv/mostlikelyto.txt')).each do |line|
+#   Question.create!( {
+#     content: line.strip
+#   })
+# end
+
+
