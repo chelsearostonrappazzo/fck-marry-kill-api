@@ -7,18 +7,18 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'csv'
 
-# CSV.foreach(Rails.root.join('lib/seed_csv/contestants.csv'), headers: true) do |row|
-#   Contestant.create( {
-#     name: row["Name"], 
-#     image: row["Image"],
+CSV.foreach(Rails.root.join('lib/seed_csv/contestants.csv'), headers: true) do |row|
+  Contestant.create( {
+    name: row["Name"], 
+    image: row["Image"],
 
-#   } ) 
-# end
+  } ) 
+end
 
-# File.readlines(Rails.root.join('lib/seed_csv/mostlikelyto.txt')).each do |line|
-#   Question.create!( {
-#     content: line.strip
-#   })
-# end
+File.readlines(Rails.root.join('lib/seed_csv/mostlikelyto.txt')).each do |line|
+  Question.create!( {
+    content: line.strip
+  })
+end
 
 
