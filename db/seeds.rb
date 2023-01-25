@@ -15,6 +15,14 @@ CSV.foreach(Rails.root.join('lib/seed_csv/contestants.csv'), headers: true) do |
   } ) 
 end
 
+CSV.foreach(Rails.root.join('lib/seed_csv/topbottoms.csv'), headers: true) do |row|
+  Man.create( {
+    name: row["Name"], 
+    image: row["Image"],
+
+  } ) 
+end
+
 File.readlines(Rails.root.join('lib/seed_csv/mostlikelyto.txt')).each do |line|
   Question.create!( {
     content: line.strip

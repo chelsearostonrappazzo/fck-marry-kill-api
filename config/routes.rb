@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "/current-round" => "contestants#current_round"
   get "/completed-rounds" => "contestants#completed_rounds"
   get "/reset" => "contestants#reset"
-
+  
+  get "/allmen" => "contestants#all_men"
+  get "/top-round" => "contestants#top_round"
   get "current-question" => "questions#current_question"
 end

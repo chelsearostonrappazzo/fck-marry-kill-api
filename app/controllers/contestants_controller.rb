@@ -10,8 +10,20 @@ class ContestantsController < ApplicationController
     render json: @current_round
   end
 
+  def all_men
+    render json: Man.all
+  end
+
+  def top_round
+    @men = Man.where(completed: false)
+    @top_round = @men.shuffle.first(2)
+    @top_round.map { |man| man.update(completed: true)}
+    render json: @top_round
+  end
+
   def reset 
     @contestants = Contestant.where(completed: true).update_all(completed: false)
+    @men = Man.where(completed: true).update_all(completed: false)
   end
 
   def completed_rounds
