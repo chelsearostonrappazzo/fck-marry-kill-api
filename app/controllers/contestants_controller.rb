@@ -1,6 +1,7 @@
 class ContestantsController < ApplicationController
   def index 
-    render json: Contestant.all
+    @contestants = Contestant.all
+    render :index
   end
 
   def current_round 
