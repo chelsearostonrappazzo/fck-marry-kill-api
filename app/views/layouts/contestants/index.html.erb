@@ -1,0 +1,7 @@
+<h1> Contestants </h1>
+<% @contestants.each do |contestant| %>
+  <figure class="figure col-md-3 center">
+    <img class="figure-img img-fluid rounded" />
+    <figcaption class="figure-caption"><%= contestant.name %></figcaption>
+  </figure>
+<% end %>
